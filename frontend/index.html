@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Phishing Detection SOC Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Advanced Phishing Detection Platform</h1>
+  <p>Explainable email triage, static URL analysis, ML assistance and analyst audit trail.</p>
+</header>
+
+<main>
+
+  <section id="auth" class="card">
+    <h2>Analyst Login</h2>
+
+    <div class="grid">
+      <label>
+        Username
+        <input id="username" value="admin">
+      </label>
+
+      <label>
+        Password
+        <input
+          id="password"
+          type="password"
+          value="ChangeMe123!"
+        >
+      </label>
+    </div>
+
+    <button onclick="login()">LOGIN</button>
+    <button class="secondary" onclick="registerUser()">
+      CREATE USER
+    </button>
+
+    <p id="authMessage"></p>
+  </section>
+
+  <section id="app" hidden>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing Email Detection Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>Phishing Email Detection Dashboard</h1>
+  <p>Defensive, explainable analysis of synthetic/sample emails.</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Analyze Email</h2>
+    <div class="grid">
+      <label>Sender
+        <input id="sender" value="security-alert@account-check.invalid.test">
+      </label>
+      <label>Display name (optional)
+        <input id="displayName" placeholder="Example Security Team">
+      </label>
+      <label>Subject
+        <input id="subject" value="URGENT: Verify Your Account Immediately">
+      </label>
+      <label>Attachment filename (optional)
+        <input id="attachment" placeholder="invoice.pdf.exe">
+      </label>
+    </div>
+
+    <label>Email body
+      <textarea id="body" rows="7">Urgent action is required. Verify your password and personal details immediately or your account may be suspended.
+http://198.51.100.10/verify-account</textarea>
+    </label>
+
+    <button onclick="analyzeEmail()">ANALYZE EMAIL</button>
+    <div id="result"></div>
+  </section>
+
+  <section class="cards">
+    <div class="stat"><span>Total</span><strong id="total">0</strong></div>
+    <div class="stat"><span>Average risk</span><strong id="average">0</strong></div>
+    <div class="stat"><span>Likely phishing</span><strong id="phishing">0</strong></div>
+    <div class="stat"><span>Suspicious</span><strong id="suspicious">0</strong></div>
+  </section>
+
+  <section class="card">
+    <h2>Top Indicators</h2>
+    <div id="indicators"></div>
+  </section>
+
+  <section class="card">
+    <h2>Analysis History</h2>
+    <button onclick="loadHistory()">Refresh History</button>
+    <div id="history"></div>
+  </section>
+
+  <section class="card awareness">
+    <h2>How to Spot a Phishing Email</h2>
+    <ol>
+      <li>Check the sender address and domain spelling.</li>
+      <li>Be cautious with unexpected urgency or threats.</li>
+      <li>Inspect links without opening them.</li>
+      <li>Be careful with credential or personal-information requests.</li>
+      <li>Do not open unexpected attachments.</li>
+      <li>Watch for generic greetings and unusual formatting.</li>
+      <li>Verify unusual payment requests through a trusted channel.</li>
+      <li>Consider the full context rather than one indicator.</li>
+    </ol>
+    <strong>Before You Click:</strong>
+    <p>Pause → inspect sender → inspect destination → verify through a trusted channel → report if appropriate.</p>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
